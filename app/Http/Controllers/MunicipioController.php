@@ -13,7 +13,7 @@ class MunicipioController extends Controller
     public function index()
     {
         $municipios = Municipio::all();
-        return view('dashboard')->with('municipios', $municipios);
+        return view('municipios')->with('municipios', $municipios);
     }
 
     /**
@@ -34,7 +34,7 @@ class MunicipioController extends Controller
             'numGasolineras' => $request -> input('numGasolineras')
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('municipios');
     }
 
     /**
@@ -74,7 +74,7 @@ class MunicipioController extends Controller
     public function destroy(Municipio $municipio)
     {
         $municipio->delete();
-        return redirect()->route('dashboard');
+        return redirect()->route('municipios');
 
     }
 }
